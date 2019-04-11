@@ -14,13 +14,16 @@ Utility library for personal use. I'll keep adding helper functions as I need. F
 ## strings
     func RemoveAfter(str string, after string) string
     func RemoveAfterwards(str string, after string) string 
+
 ### extract
+
 #### url
+
 ##### from
     func FilePath(path string) (string, error)
+
 ### normalize
     func Url(path string) (string, error)
-   
 
 ## url
     func FilePath(u string) (string, error)
