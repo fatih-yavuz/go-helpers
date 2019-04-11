@@ -3,8 +3,6 @@ package bytes
 import (
 	"bytes"
 	"compress/gzip"
-	"encoding/base64"
-	"io/ioutil"
 )
 
 /*
@@ -23,10 +21,6 @@ func Compress(byt []byte) ([]byte, error) {
 	if err := gz.Close(); err != nil {
 		return nil, err
 	}
-	str := base64.StdEncoding.EncodeToString(b.Bytes())
-	data, _ := base64.StdEncoding.DecodeString(str)
-	rdata := bytes.NewReader(data)
-	r, _ := gzip.NewReader(rdata)
-	s, _ := ioutil.ReadAll(r)
-	return s, nil
+
+	return b.Bytes(), nil
 }
